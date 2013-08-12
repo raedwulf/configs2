@@ -1,11 +1,15 @@
 #!/bin/sh
 
-mkdir -p $HOME/.config
-mkdir -p $HOME/bin
+mkdir -p $HOME/{.config,bin,downloads}
 
-for i in `echo "meat bspwm sxhkd"`; do
+for i in `echo "meat bspwm sxhkd jumanji"`; do
 	ln -s $HOME/config/dotconfig/$i $HOME/.config/
 done
 
-ln -s $HOME/config/bin/tmx $HOME/bin/tmx
-ln -s $HOME/config/.tmux.conf $HOME/.tmux.conf
+for i in `echo "tmx"`; do
+	ln -s $HOME/config/bin/$i $HOME/bin/$i
+done
+
+for i in `echo ".tmux.conf"`; do
+	ln -s $HOME/config/$i $HOME/$i
+done

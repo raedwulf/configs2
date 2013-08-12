@@ -5,7 +5,7 @@
 super + alt + Escape
     bspc quit
 
-super + shift + c
+super + grave
     bspc window -c
 
 super + t
@@ -17,10 +17,10 @@ super + b
 super + {s,f}
     bspc window -t {floating,fullscreen}
 
-super + {grave,Tab}
+super + {c,Tab}
     bspc {window,desktop} -f last
 
-super + apostrophe
+super + c
     bspc window -s last
 
 super + y

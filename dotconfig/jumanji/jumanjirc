@@ -1,0 +1,9 @@
+# raedwulf's jumanji configuration
+# search engines
+searchengine ddg http://duckduckgo.com/search?q=%s
+searchengine ggl http://www.google.com/search?q=%s
+searchengine wiki http://en.wikipedia.org/w/index.php?search=%s
+# browser settings
+set homepage http://duckduckgo.com
+set auto_save 60
+set single_instance false
