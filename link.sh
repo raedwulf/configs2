@@ -2,7 +2,7 @@
 
 mkdir -p $HOME/{.config,bin,downloads}
 
-for i in `echo "meat bspwm sxhkd jumanji"`; do
+for i in `echo "meat bspwm sxhkd jumanji compton"`; do
 	ln -s $HOME/config/dotconfig/$i $HOME/.config/
 done
 
