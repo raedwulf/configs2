@@ -1,6 +1,6 @@
 # raedwulf's jumanji configuration
 # search engines
-searchengine ddg http://duckduckgo.com/search?q=%s
+searchengine ddg http://duckduckgo.com/%s
 searchengine ggl http://www.google.com/search?q=%s
 searchengine wiki http://en.wikipedia.org/w/index.php?search=%s
 # browser settings
