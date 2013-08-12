@@ -75,10 +75,10 @@ super + !button{1-3}
 # wm independent hotkeys
 #
 
-super + Return
+super + q
     st
 
-super + space
+super + w
     dmenu_run
 
 # make sxhkd reload its configuration files:
