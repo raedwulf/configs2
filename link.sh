@@ -10,6 +10,6 @@ for i in `echo "tmx"`; do
 	ln -s $HOME/config/bin/$i $HOME/bin/$i
 done
 
-for i in `echo "tmux.conf bashrc"`; do
+for i in `echo "tmux.conf bashrc xinitrc"`; do
 	ln -s $HOME/config/$i $HOME/.$i
 done
