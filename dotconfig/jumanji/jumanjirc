@@ -5,5 +5,5 @@ searchengine ggl http://www.google.com/search?q=%s
 searchengine wiki http://en.wikipedia.org/w/index.php?search=%s
 # browser settings
 set homepage http://duckduckgo.com
-set auto_save 60
-set single_instance false
+# download settings
+set download_dir ~/downloads/
