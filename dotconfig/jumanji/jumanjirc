@@ -3,6 +3,7 @@
 searchengine ddg http://duckduckgo.com/%s
 searchengine ggl http://www.google.com/search?q=%s
 searchengine wiki http://en.wikipedia.org/w/index.php?search=%s
+searchengine gh http://github.com/search?q=%s
 # browser settings
 set homepage http://duckduckgo.com
 # download settings
