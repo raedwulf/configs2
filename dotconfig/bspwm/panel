@@ -4,10 +4,11 @@ flavor=${1:-bar}
 
 bspc control --put-status
 xtitle -sf 'T%s' > "$PANEL_FIFO" &
-clock -sf 'S%a %H:%M' > "$PANEL_FIFO" &
+clock -sf 'C%c' -i 1 > "$PANEL_FIFO" &
+battery -sf'B%s %d' -i 5 > $PANEL_FIFO &
 case "$flavor" in
     bar)
-        cat "$PANEL_FIFO" | panel_bar | bar
+        cat "$PANEL_FIFO" | panel_bar | bar-aint-recursive
         ;;
     dzen2)
         . panel_colors

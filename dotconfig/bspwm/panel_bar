@@ -1,14 +1,17 @@
 #! /bin/sh
 #
-# Example panel for LemonBoy's bar
+# Raedwulf's bar configuration
 
 while read -r line ; do
     case $line in
-        S*)
-            sys_infos="\\r\\f5${line#?}\\fr"
+        C*)
+            clock_info="\\f5${line#?}\\fr"
+            ;;
+        B*)
+            bat_info="\\f5${line#?}\\fr"
             ;;
         T*)
-            title="\\c${line#?}"
+            title="${line#?}"
             ;;
         W*)
             wm_infos=""
@@ -44,5 +47,6 @@ while read -r line ; do
             done
             ;;
     esac
-    printf "%s\n" "$wm_infos $title $sys_infos"
+    echo "$wm_infos $title $bat_info $sys_infos" >> /tmp/blargh
+    printf "%s\n" "$wm_infos\\c$title\\r$bat_info $clock_info"
 done

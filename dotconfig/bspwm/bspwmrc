@@ -5,7 +5,8 @@ export PATH=$HOME/.config/bspwm:$PATH
 FIRST_DESK=1
 REMAINING_DESKS="$(seq 2 9) 0"
 bspc desktop Desktop01 -n $FIRST_DESK
-bspc monitor -a $REMAINING_DESKS -p 16 0 0 0
+bspc monitor -a $REMAINING_DESKS
+bspc monitor -p 16 0 0 0
 
 bspc rule -a Gimp -d Eight --floating
 
