@@ -1,5 +1,8 @@
 #!/bin/sh
 
+xset +fp /usr/share/fonts/local
+xset fp rehash
+
 export PANEL_FIFO=`mktemp --tmpdir bspwm-panel.XXX`
 [ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
 mkfifo "$PANEL_FIFO"
