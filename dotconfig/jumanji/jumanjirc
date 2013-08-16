@@ -1,6 +1,6 @@
 # raedwulf's jumanji configuration
 # search engines
-searchengine ddg http://duckduckgo.com/%s
+searchengine ddg http://duckduckgo.com/?q=%s
 searchengine ggl http://www.google.com/search?q=%s
 searchengine wiki http://en.wikipedia.org/w/index.php?search=%s
 searchengine github http://github.com/search?q=%s
@@ -9,4 +9,4 @@ searchengine aur http://aur.archlinux.org/packages/?O=0&K=%s
 # browser settings
 set homepage http://duckduckgo.com
 # download settings
-set download_dir ~/downloads/
+set download-dir ~/downloads/
