@@ -10,3 +10,6 @@ searchengine aur http://aur.archlinux.org/packages/?O=0&K=%s
 set homepage http://duckduckgo.com
 # download settings
 set download-dir ~/downloads/
+set download-command "wget --load-cookies ~/.local/share/jumanji/cookies '%s' -O '%s'"
+# enable adblock
+set adblock true
