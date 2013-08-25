@@ -11,4 +11,7 @@ PS1='[\u@\h \W]\$ '
 #alias shutdown='sudo shutdown -h now'
 #alias reboot='sudo reboot'
 
+export EDITOR=vim
+export PAGER=less
+
 export PATH=$HOME/bin:$PATH
