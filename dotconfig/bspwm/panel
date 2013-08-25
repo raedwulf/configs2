@@ -1,20 +1,18 @@
 #! /bin/sh
 
-flavor=${1:-bar}
+WIFIDEV=`find /sys/class/net -name 'wl*'`
+WIFIDEV=`basename $WIFIDEV`
+
+killall -9 clock battery cpu thermal memory wifi xtitle
 
 bspc control --put-status
 xtitle -sf 'T%s' > "$PANEL_FIFO" &
 clock -sf 'C%c' -i 1 > "$PANEL_FIFO" &
-battery -sf'B%s %d' -i 5 > $PANEL_FIFO &
-case "$flavor" in
-    bar)
-        cat "$PANEL_FIFO" | panel_bar | bar-aint-recursive
-        ;;
-    dzen2)
-        . panel_colors
-        PANEL_HEIGHT=24
-        FONT_FAMILY='DejaVu Sans'
-        FONT_SIZE=11
-        cat "$PANEL_FIFO" | panel_dzen2 -f "$FONT_FAMILY" -s "$FONT_SIZE" | dzen2 -h $PANEL_HEIGHT -dock -ta l -title-name panel -fn "${FONT_FAMILY}:pixelsize=${FONT_SIZE}" -fg "$COLOR_FOREGROUND" -bg "$COLOR_BACKGROUND"
-        ;;
-esac
+battery -sf'B\f4BAT \f5%s %3d' -i 5 > $PANEL_FIFO &
+cpu -sp 'P\f4CPU \f5' -f '%3d%%' -i 2 > $PANEL_FIFO &
+thermal -sp 'H\f4TEMP \f5' -f '%2d' -i 2 > $PANEL_FIFO &
+disk -sf 'D\f4DISK \f5%.4g %s' -i 3 > $PANEL_FIFO &
+memory -sf 'M\f4MEM \f5%3d%%' -i 3 > $PANEL_FIFO &
+wifi -sf 'N\f4%s \f5%3d%%' -w $WIFIDEV -i 3 > $PANEL_FIFO &
+
+cat "$PANEL_FIFO" | panel_bar | bar-aint-recursive

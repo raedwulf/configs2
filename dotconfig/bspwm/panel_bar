@@ -5,10 +5,25 @@
 while read -r line ; do
     case $line in
         C*)
-            clock_info="\\f5${line#?}\\fr"
+            clock_info="${line#?}\\fr"
             ;;
         B*)
-            bat_info="\\f5${line#?}\\fr"
+            bat_info="${line#?}\\fr"
+            ;;
+	P*)
+            cpu_info="${line#?}\\fr"
+            ;;
+	H*)
+            thermal_info="${line#?}\\fr"
+            ;;
+	M*)
+            mem_info="${line#?}\\fr"
+            ;;
+	N*)
+            wifi_info="${line#?}\\fr"
+            ;;
+	D*)
+            disk_info="${line#?}\\fr"
             ;;
         T*)
             title="${line#?}"
@@ -47,6 +62,5 @@ while read -r line ; do
             done
             ;;
     esac
-    echo "$wm_infos $title $bat_info $sys_infos" >> /tmp/blargh
-    printf "%s\n" "$wm_infos\\c$title\\r$bat_info $clock_info"
+    printf "%s\n" "$wm_infos        $title\\r$cpu_info|$thermal_info|$disk_info|$mem_info|$bat_info|$wifi_info|$clock_info"
 done
