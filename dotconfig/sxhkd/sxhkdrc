@@ -81,6 +81,9 @@ super + q
 super + w
     dmenu_run -fn "-*-terminus-medium-r-normal-*-12-*-*-*-c-*-*-1" -y 18
 
+Print
+    scrot -m `xdg-user-dir PICTURES`/screenshots/desktop-`date +%Y%m%d_%H%M%S`.png
+
 # make sxhkd reload its configuration files:
 super + Escape
     pkill -USR1 -x sxhkd
