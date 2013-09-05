@@ -1,5 +1,5 @@
-#! /bin/sh
+#!/bin/sh
 
-. ./lsd
+. $HOME/.config/bspwm/lsd
 
 cat "$PANEL_FIFO" | panel_bar | bar-aint-recursive
