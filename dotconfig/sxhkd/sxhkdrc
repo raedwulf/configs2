@@ -84,6 +84,9 @@ super + w
 Print
     scrot -m `xdg-user-dir PICTURES`/screenshots/desktop-`date +%Y%m%d_%H%M%S`.png
 
+super + Insert
+    $HOME/bin/wallpaper /usr/lib/xscreensaver/glmatrix
+
 # make sxhkd reload its configuration files:
 super + Escape
     pkill -USR1 -x sxhkd

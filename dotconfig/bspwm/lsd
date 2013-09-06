@@ -3,7 +3,7 @@
 WIFIDEV=`find /sys/class/net -name 'wl*'`
 WIFIDEV=`basename $WIFIDEV`
 
-killall -9 clock battery cpu thermal memory wifi xtitle
+killall -9 clock battery cpu thermal memory wifi disk xtitle
 
 bspc control --put-status
 xtitle -sf 'T%s' > "$PANEL_FIFO" &

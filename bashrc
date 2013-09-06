@@ -14,4 +14,4 @@ PS1='[\u@\h \W]\$ '
 export EDITOR=vim
 export PAGER=less
 
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/bin:$HOME/.config/bspwm:$PATH

@@ -10,6 +10,6 @@ mkfifo "$PANEL_FIFO"
 
 setxkbmap gb &
 sxhkd &
-compton -CGb --config ~/.config/compton/compton.conf
+$HOME/bin/wallpaper /usr/lib/xscreensaver/glmatrix &
 
 exec bspwm -s "$PANEL_FIFO" -p W

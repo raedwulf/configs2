@@ -2,4 +2,6 @@
 
 . $HOME/.config/bspwm/lsd
 
+killall -9 panel_bar bar_aint_recursive
+
 cat "$PANEL_FIFO" | panel_bar | bar-aint-recursive
