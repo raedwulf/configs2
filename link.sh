@@ -3,13 +3,13 @@
 mkdir -p $HOME/{.config,bin,downloads}
 
 for i in `echo "meat bspwm sxhkd jumanji compton"`; do
-	ln -s $HOME/config/dotconfig/$i $HOME/.config/
+	ln -sf $HOME/config/config/$i $HOME/.config/
 done
 
 for i in `echo "tmx"`; do
-	ln -s $HOME/config/bin/$i $HOME/bin/$i
+	ln -sf $HOME/config/bin/$i $HOME/bin/$i
 done
 
 for i in `echo "tmux.conf bashrc xinitrc inputrc"`; do
-	ln -s $HOME/config/$i $HOME/.$i
+	ln -sf $HOME/config/$i $HOME/.$i
 done
