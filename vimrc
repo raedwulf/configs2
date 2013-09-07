@@ -1,18 +1,69 @@
 " Raedwulf's new simple vim configuration
 
-" General
+"" General
+set maxmempattern=2000000
+set encoding=utf-8
 set incsearch
 set ignorecase
 set smartcase
 set scrolloff=2
 set nu
-filetype on
+set complete=.,w,b,u,t
+set wildignore=*.o,*.pyc,*.pyo,.git,.svn
+set mouse=av
+set hidden
+set nofoldenable
+set showmatch
+set pumheight=8
+set number
+set ruler
+set showcmd
+set virtualedit=block
 
-" Default Formatting
+" Filetype
+filetype on
+filetype plugin on
+filetype indent off
+
+" Syntax
+syntax on
+set synmaxcol=256
+
+" Searching
+set incsearch
+set hls
+set gdefault
+set ignorecase
+set smartcase
+
+"" Default Formatting
 set tabstop=8
 set shiftwidth=8
 set autoindent
 set noexpandtab
 
-" Colors
+" Set correct folding for C
+autocmd FileType c,h,cpp silent setlocal fdm=syntax fdn=1
+autocmd FileType c,h,cpp set cindent
+
+" Files to set default textwidth
+autocmd FileType mail,tex set textwidth=78
+autocmd FileType mail,tex let g:textwidth=78
+
+"" Colors
 colorscheme tir_black
+
+"" Plugins
+
+" Rainbow Parenthesis
+autocmd BufReadPost *
+\ call rainbow_parenthesis#LoadBraces() |
+\ call rainbow_parenthesis#LoadSquare() |
+\ call rainbow_parenthesis#LoadRound() |
+\ call rainbow_parenthesis#Activate()
+
+" Indent Guides
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=#34343C ctermbg=233
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#48484F ctermbg=234
