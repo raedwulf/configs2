@@ -19,6 +19,7 @@ set number
 set ruler
 set showcmd
 set virtualedit=block
+set viminfo='100,f1,<50,:50,/50,h,!
 
 " Filetype
 filetype on
@@ -49,6 +50,12 @@ autocmd FileType c,h,cpp set cindent
 " Files to set default textwidth
 autocmd FileType mail,tex set textwidth=78
 autocmd FileType mail,tex let g:textwidth=78
+
+" Jump to the last known cursor position
+autocmd BufReadPost *
+\ if line("'\"") > 0 && line("'\"") <= line("$") |
+\   exe "normal! g`\"" |
+\ endif
 
 "" Colors
 colorscheme tir_black
