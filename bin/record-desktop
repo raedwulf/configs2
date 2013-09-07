@@ -1,0 +1,2 @@
+#!/bin/sh
+exec ffmpeg -f x11grab -r 25 -s `xrandr --current | awk 'BEGIN { RS="," } / *current/ {print $2"x"$4}'` -i :0.0 `xdg-user-dir VIDEOS`/desktop/desktop-`date +%Y%m%d_%H%M%S`.mkv
