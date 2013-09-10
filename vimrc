@@ -58,7 +58,11 @@ autocmd BufReadPost *
 \ endif
 
 "" Colors
-colorscheme tir_black
+if &term=~"linux"
+	colorscheme desert
+else
+	colorscheme tir_black
+endif
 
 "" Plugins
 
