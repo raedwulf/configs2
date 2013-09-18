@@ -1,7 +1,7 @@
 #!/bin/sh
 
-. $HOME/.config/bspwm/lsd
+trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
 
-killall -9 panel_bar bar_aint_recursive
+. $HOME/.config/bspwm/lsd
 
 cat "$PANEL_FIFO" | panel_bar | bar-aint-recursive

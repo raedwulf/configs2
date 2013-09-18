@@ -3,4 +3,4 @@
 killall -9 compton $1
 
 compton -CGb --config ~/.config/compton/compton.conf
-xwinwrap -b -fs -sp -fs -nf -ni -- $1 -speed 0.5 -root -window-id WID
+xwinwrap -b -d -fs -sp -fs -nf -ni -- $1 -speed 1.0 -waves -rotate -root -window-id WID

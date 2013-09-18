@@ -2,11 +2,8 @@
 
 export PATH=$HOME/.config/bspwm:$PATH
 
-FIRST_DESK=1
-REMAINING_DESKS="$(seq 2 9) 0"
-bspc desktop Desktop01 -n $FIRST_DESK
-bspc monitor -a $REMAINING_DESKS
-bspc monitor -p 16 0 0 0
+bspc desktop ^1 -n I
+bspc monitor -a II III IV V VI VII VIII IX X
 
 bspc rule -a Gimp --floating
 bspc rule -a mplayer-float --floating
@@ -25,6 +22,7 @@ bspc config borderless_monocle          true
 bspc config gapless_monocle             true
 bspc config apply_floating_atom         true
 bspc config focus_follows_pointer       true
+bspc config top_padding                 18
 
 killall -9 panel
 
