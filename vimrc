@@ -20,6 +20,7 @@ set ruler
 set showcmd
 set virtualedit=block
 set viminfo='100,f1,<50,:50,/50,h,!
+set backupdir=~/.cache/vim
 
 " Filetype
 filetype on
@@ -48,8 +49,8 @@ autocmd FileType c,h,cpp silent setlocal fdm=syntax fdn=1
 autocmd FileType c,h,cpp set cindent
 
 " Files to set default textwidth
-autocmd FileType mail,tex set textwidth=78
-autocmd FileType mail,tex let g:textwidth=78
+autocmd FileType mail,plaintex set textwidth=78
+autocmd FileType mail,plaintex let g:textwidth=78
 
 " Jump to the last known cursor position
 autocmd BufReadPost *
