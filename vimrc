@@ -49,8 +49,8 @@ autocmd FileType c,h,cpp silent setlocal fdm=syntax fdn=1
 autocmd FileType c,h,cpp set cindent
 
 " Files to set default textwidth
-autocmd FileType mail,plaintex set textwidth=78
-autocmd FileType mail,plaintex let g:textwidth=78
+autocmd FileType mail,tex,plaintex set textwidth=78
+autocmd FileType mail,tex,plaintex let g:textwidth=78
 
 " Jump to the last known cursor position
 autocmd BufReadPost *
