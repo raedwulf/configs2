@@ -5,7 +5,7 @@ WIFIDEV=`basename $WIFIDEV`
 
 killall -9 clock battery cpu thermal memory wifi disk xtitle
 
-bspc control --put-status
+bspc control --subscribe > "$PANEL_FIFO" &
 xtitle -sf 'T%s' > "$PANEL_FIFO" &
 clock -sf 'C\f4⌚ \f5%a %b %d %H:%M:%S' -i 1 > "$PANEL_FIFO" &
 battery -sf'B\f4⚡ \f5%s %3d' -i 5 > $PANEL_FIFO &

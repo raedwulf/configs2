@@ -8,6 +8,7 @@ export PANEL_FIFO=`mktemp --tmpdir bspwm-panel.XXX`
 [ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
 mkfifo "$PANEL_FIFO"
 
+ruld &
 setxkbmap gb &
 sxhkd &
 $HOME/bin/wallpaper /usr/lib/xscreensaver/glmatrix &
