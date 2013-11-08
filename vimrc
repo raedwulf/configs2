@@ -48,6 +48,9 @@ set noexpandtab
 autocmd FileType c,h,cpp silent setlocal fdm=syntax fdn=1
 autocmd FileType c,h,cpp set cindent
 
+" Use spaces for tabs in python
+autocmd FileType python set tabstop=4 shiftwidth=4 expandtab
+
 " Files to set default textwidth
 autocmd FileType mail,tex,plaintex set textwidth=78
 autocmd FileType mail,tex,plaintex let g:textwidth=78
