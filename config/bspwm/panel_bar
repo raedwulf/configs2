@@ -2,6 +2,7 @@
 #
 # Raedwulf's bar configuration
 
+SCREENS=$(xrandr -q | grep " connected" | wc -l)
 while read -r line ; do
     case $line in
         C*)
@@ -70,7 +71,6 @@ while read -r line ; do
             done
             ;;
     esac
-    SCREENS=$(xrandr -q | grep " connected" | wc -l)
     TEXT="$wm_infos        $title\\r$cpu_info|$thermal_info|$disk_info|$mem_info|$bat_info|$wifi_info|$clock_info"
     for (( s = 0; s < ${SCREENS}; s++ )); do
         printf "\\s%1d%s" "${s}" "${TEXT}"
