@@ -1,6 +1,6 @@
 #!/bin/sh
 
-killall -9 compton $1
-
-compton -CGb --config ~/.config/compton/compton.conf
-xwinwrap -b -sp -fs -nf -ni -- $1 -speed 1.0 -waves -rotate -root -window-id WID
+#killall -9 compton $1
+#
+#compton -CGb --config ~/.config/compton/compton.conf
+#xwinwrap -b -sp -fs -nf -ni -- $1 -speed 1.0 -waves -rotate -root -window-id WID

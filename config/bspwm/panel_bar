@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Raedwulf's bar configuration
 
@@ -10,19 +10,19 @@ while read -r line ; do
         B*)
             bat_info="${line#?}\\fr"
             ;;
-	P*)
+        P*)
             cpu_info="${line#?}\\fr"
             ;;
-	H*)
+        H*)
             thermal_info="${line#?}\\fr"
             ;;
-	M*)
+        M*)
             mem_info="${line#?}\\fr"
             ;;
-	N*)
+        N*)
             wifi_info="${line#?}\\fr"
             ;;
-	D*)
+        D*)
             disk_info="${line#?}\\fr"
             ;;
         T*)
@@ -36,31 +36,45 @@ while read -r line ; do
                 item=$1
                 name=${item#?}
                 case $item in
-                    [OFU]*)
-                        # active desktop
-                        wm_infos="$wm_infos\\b5\\u7 \\f0${name}\\fr"
+                    O*)
+                        # focused occupied desktop
+                        wm_infos="$wm_infos \\u3\\br\\fr${name}\\ur"
+                        ;;
+                    F*)
+                        # focused free desktop
+                        wm_infos="$wm_infos \\u4\\br\\f7${name}\\ur"
+                        ;;
+                    U*)
+                        # focused urgent desktop
+                        wm_infos="$wm_infos \\u9\\br\\fr${name}\\ur"
                         ;;
                     o*)
-                        # inactive but occupied desktop
-                        wm_infos="$wm_infos \\ur\\br${name}"
+                        # occupied desktop
+                        wm_infos="$wm_infos \\br\\fr${name}"
                         ;;
                     f*)
-                        # inactive desktop
-                        wm_infos="$wm_infos \\ur\\br\\f7${name}\\fr"
+                        # free desktop
+                        wm_infos="$wm_infos \\br\\f7${name}"
                         ;;
                     u*)
                         # urgent desktop
-                        wm_infos="$wm_infos \\ur\\b9\\f0${name}\\fr\\br"
+                        wm_infos="$wm_infos \\b1\\fr${name}"
                         ;;
                     L*)
                         # layout
                         layout=$(printf "%s" "${name}" | sed 's/\(.\).*/\U\1/')
-                        wm_infos="$wm_infos \\ur\\b4\\f0$layout\\br\\fr"
+                        wm_infos="$wm_infos    \\br\\f6$layout"
                         ;;
                 esac
                 shift
             done
             ;;
     esac
-    printf "%s\n" "$wm_infos        $title\\r$cpu_info|$thermal_info|$disk_info|$mem_info|$bat_info|$wifi_info|$clock_info"
+    SCREENS=$(xrandr -q | grep " connected" | wc -l)
+    TEXT="$wm_infos        $title\\r$cpu_info|$thermal_info|$disk_info|$mem_info|$bat_info|$wifi_info|$clock_info"
+    for (( s = 0; s < ${SCREENS}; s++ )); do
+        printf "\\s%1d%s" "${s}" "${TEXT}"
+    done
+    echo
+    echo "${NUM}" >> /tmp/asdf2
 done
