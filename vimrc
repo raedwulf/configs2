@@ -11,6 +11,7 @@ set nu
 set complete=.,w,b,u,t
 set wildignore=*.o,*.pyc,*.pyo,.git,.svn
 set mouse=av
+set ttym=sgr
 set hidden
 set nofoldenable
 set showmatch
