@@ -5,7 +5,7 @@ WIFIDEV=`basename $WIFIDEV`
 ETHDEV=`find /sys/class/net -name 'e*'` 
 ETHDEV=`basename $ETHDEV`
 
-killall -9 clock battery cpu thermal memory wifi disk xtitle
+killall -9 clock battery cpu thermal memory network disk xtitle
 
 bspc control --subscribe > "$PANEL_FIFO" &
 xtitle -sf 'T%s' > "$PANEL_FIFO" &
@@ -15,4 +15,14 @@ cpu -sp "P\f4☢ \f5" -f '%3d%%' -i 2 > $PANEL_FIFO &
 thermal -sp 'H\f4T \f5' -f '%2d\f4℃\f5' -i 5 > $PANEL_FIFO &
 disk -sf 'D\f4⛁ \f5%.4g %s' -i 3 > $PANEL_FIFO &
 memory -sf 'M\f4⛁ \f5%3d%%' -i 3 > $PANEL_FIFO &
-network -sf 'N\f4%s \f5%3d%%' -w $WIFIDEV -e $ETHDEV -i 3 > $PANEL_FIFO &
+if [ "$WIFIDEV" == "" ]; then
+	if [ "$ETHDEV" != "" ]; then
+		network -sf 'N\f4%s \f5%3d%%' -e $ETHDEV -i 3 > $PANEL_FIFO &
+	fi
+else
+	if [ "$ETHDEV" == "" ]; then
+		network -sf 'N\f4%s \f5%3d%%' -w $WIFIDEV -i 3 > $PANEL_FIFO &
+	else
+		network -sf 'N\f4%s \f5%3d%%' -w $WIFIDEV -e $ETHDEV -i 3 > $PANEL_FIFO &
+	fi
+fi
