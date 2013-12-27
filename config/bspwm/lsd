@@ -17,12 +17,12 @@ disk -sf 'D\f4⛁ \f5%.4g %s' -i 3 > $PANEL_FIFO &
 memory -sf 'M\f4⛁ \f5%3d%%' -i 3 > $PANEL_FIFO &
 if [ "$WIFIDEV" == "" ]; then
 	if [ "$ETHDEV" != "" ]; then
-		network -sxf 'N\f4%s\f5%s %3d%%' -e $ETHDEV -i 3 > $PANEL_FIFO &
+		network -sxf 'N\f4%s \f5%s %3d%%' -e $ETHDEV -i 3 > $PANEL_FIFO &
 	fi
 else
 	if [ "$ETHDEV" == "" ]; then
-		network -sxf 'N\f4%s\f5%s %3d%%' -w $WIFIDEV -i 3 > $PANEL_FIFO &
+		network -sxf 'N\f4%s \f5%s %3d%%' -w $WIFIDEV -i 3 > $PANEL_FIFO &
 	else
-		network -sxf 'N\f4%s\f5%s %3d%%' -w $WIFIDEV -e $ETHDEV -i 3 > $PANEL_FIFO &
+		network -sxf 'N\f4%s \f5%s %3d%%' -w $WIFIDEV -e $ETHDEV -i 3 > $PANEL_FIFO &
 	fi
 fi
