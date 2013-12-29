@@ -28,13 +28,16 @@ bspc config apply_floating_atom         true
 bspc config focus_follows_pointer       true
 bspc config top_padding                 18
 
-bspc config rule_command "$(which rule_command)"
+bspc config external_rules_command "$(which rule_command)"
 
-rulc -a 'class=="Gimp"' 'desktop=^8 follow=on floating=on'
-rulc -a 'class=="Chromium"' 'desktop=^2'
-rulc -a 'instance=="mpv"' 'floating=on'
-rulc -a 'class=="Kupfer.py"' 'focus=on'
-rulc -a 'class=="Screenkey"' 'manage=off'
+rulc -a 'class=="Gimp"' 'desktop=^8 follow=true floating=true'
+rulc -a 'class=="Chromium"' 'desktop=^0'
+rulc -a 'class=="Google-chrome"' 'desktop=^0'
+rulc -a 'class=="Firefox"' 'desktop=^0'
+rulc -a 'instance=="mpv"' 'floating=true'
+rulc -a 'class=="Kupfer.py"' 'focus=true'
+rulc -a 'class=="Screenkey"' 'manage=false'
+rulc -a 'title=="PlayOnLinux"' 'floating=true'
 
 killall -9 panel
 
