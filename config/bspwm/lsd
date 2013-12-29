@@ -10,7 +10,7 @@ killall -9 clock battery cpu thermal memory network disk xtitle
 bspc control --subscribe > "$PANEL_FIFO" &
 xtitle -sf 'T%s' > "$PANEL_FIFO" &
 clock -sf 'C\f4⌚ \f5%a %b %d %H:%M:%S' -i 1 > "$PANEL_FIFO" &
-battery -sef'B\f4%s \f5%3d' -i 5 > $PANEL_FIFO &
+battery -seqf'B\f4%s \f5%3d' -i 5 > $PANEL_FIFO &
 cpu -sp "P\f4☢ \f5" -f '%3d%%' -i 2 > $PANEL_FIFO &
 thermal -sp 'H\f4T \f5' -f '%2d\f4℃\f5' -i 5 > $PANEL_FIFO &
 disk -sf 'D\f4⛁ \f5%.4g %s' -i 3 > $PANEL_FIFO &
