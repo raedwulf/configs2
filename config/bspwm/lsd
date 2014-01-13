@@ -5,7 +5,7 @@ WIFIDEV=`basename $WIFIDEV`
 ETHDEV=`find /sys/class/net -name 'e*'` 
 ETHDEV=`basename $ETHDEV`
 
-killall -9 clock battery cpu thermal memory network disk xtitle
+killall -9 clock battery cpu thermal memory network disk xtitle bspc
 
 bspc control --subscribe > "$PANEL_FIFO" &
 xtitle -sf 'T%s' > "$PANEL_FIFO" &
