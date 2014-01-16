@@ -76,5 +76,4 @@ while read -r line ; do
         printf "\\s%1d%s" "${s}" "${TEXT}"
     done
     echo
-    echo "${NUM}" >> /tmp/asdf2
 done

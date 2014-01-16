@@ -14,4 +14,4 @@ setxkbmap gb &
 sxhkd &
 $HOME/bin/wallpaper /usr/lib/xscreensaver/glmatrix &
 
-exec bspwm -s "$PANEL_FIFO" -p W
+exec bspwm -p W
