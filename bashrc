@@ -14,7 +14,17 @@ PS1='[\u@\h \W]\$ '
 export EDITOR=vim
 export PAGER=less
 
-export PATH=$HOME/bin:$HOME/.config/bspwm:$PATH
+export PATH=$HOME/bin:$HOME/.config/bspwm:/usr/lib/ccache/bin:$PATH
 export PYTHONPATH=/usr/lib/python2.7/site-packages:$PYTHONPATH
 
 mkdir -p /tmp/$USER-cache/vim
+
+if [ -f /usr/bin/ccache ]; then
+	mkdir -p /tmp/$USER-ccache
+	export CCACHE_DIR=/tmp/$USER-ccache
+fi
+
+ARMCA9=$HOME/x-tools/arm-cortexa9_neon-linux-gnueabihf/bin
+if [ -d $ARMCA9 ]; then
+	export PATH=$PATH:$ARMCA9
+fi
