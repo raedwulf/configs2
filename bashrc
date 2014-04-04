@@ -16,3 +16,5 @@ export PAGER=less
 
 export PATH=$HOME/bin:$HOME/.config/bspwm:$PATH
 export PYTHONPATH=/usr/lib/python2.7/site-packages:$PYTHONPATH
+
+mkdir -p /tmp/$USER-cache/vim
