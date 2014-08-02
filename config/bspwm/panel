@@ -3,5 +3,8 @@
 trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
 
 . $HOME/.config/bspwm/lsd
+. $HOME/.config/bspwm/panel_colors
 
-cat "$PANEL_FIFO" | panel_bar | bar-aint-recursive
+#FONT_FAMILY='-*-terminus-medium-r-normal-*-12-*-*-*-c-*-*-1'
+FONT_FAMILY='-*-fixed-medium-r-normal-*-10-*-*-*-c-*-*-1'
+cat "$PANEL_FIFO" | panel_bar | bar-aint-recursive -g x$PANEL_HEIGHT -f "$FONT_FAMILY" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND"
