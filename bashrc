@@ -14,8 +14,8 @@ PS1='[\u@\h \W]\$ '
 export EDITOR=vim
 export PAGER=less
 
-export PATH=$HOME/bin:$HOME/.config/bspwm:/usr/lib/ccache/bin:$PATH
-export PYTHONPATH=/usr/lib/python2.7/site-packages:$PYTHONPATH
+export PATH=$HOME/bin:$HOME/.local/bin:$HOME/.config/bspwm:/usr/lib/ccache/bin:$PATH
+export PYTHONPATH=/usr/lib/python2.7/site-packages:$HOME/.local/lib/python2.7/site-packages:$PYTHONPATH
 
 mkdir -p /tmp/$USER-cache/vim
 
