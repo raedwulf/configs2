@@ -10,7 +10,7 @@ for i in `echo "tmx ruld rulc rule_command"`; do
 	ln -sf $HOME/config/bin/$i $HOME/bin/$i
 done
 
-for i in `echo "tmux.conf bashrc xinitrc inputrc vimrc Xresources"`; do
+for i in `echo "tmux.conf bashrc inputrc vimrc Xresources"`; do
 	ln -sf $HOME/config/$i $HOME/.$i
 done
 
