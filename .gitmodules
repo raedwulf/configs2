@@ -6,7 +6,7 @@
 	url = https://github.com/Shougo/neobundle.vim
 [submodule "dot_vim"]
 	path = dot_vim
-	url = git://github.com/raedwulf/dot_vim.git
+	url = https://github.com/raedwulf/dot_vim.git
 [submodule "tmux-powerline"]
 	path = tmux-powerline
-	url = git://github.com/raedwulf/tmux-powerline.git
+	url = https://github.com/raedwulf/tmux-powerline.git
