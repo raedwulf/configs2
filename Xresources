@@ -1,12 +1,8 @@
-Xcursor.theme: ArchCursorTheme
-!xterm*VT100.geometry:     80x25
-!xterm*faceName:           Terminus:style=Regular:size=10
-!xterm*font:              -*-dina-medium-r-*-*-16-*-*-*-*-*-*-*
-xterm*faceName:           xft:Dejavu Sans Mono:pixelsize=10
-XTerm*foreground:         rgb:f2/ff/ff
-XTerm*background:         rgb:00/00/00
+xterm*faceName:           xft:Meslo LG S DZ for Powerline:size=8
 xterm*dynamicColors:      true
 xterm*utf8:               2
+xterm*foreground:         white
+xterm*background:         black
 xterm*eightBitInput:      true
 xterm*saveLines:          512
 xterm*scrollKey:          true
