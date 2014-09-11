@@ -10,3 +10,6 @@
 [submodule "tmux-powerline"]
 	path = tmux-powerline
 	url = https://github.com/raedwulf/tmux-powerline.git
+[submodule "powerarrow"]
+	path = powerarrow
+	url = git://github.com/raedwulf/powerarrow.git
