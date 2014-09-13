@@ -6,7 +6,7 @@ export EDITOR=vim
 export PAGER=less
 export PYTHONDOCS=/usr/share/doc/python2/html/
 
-export VDPAU_DRIVER=va_gl
+#export VDPAU_DRIVER=va_gl
 
 alias cp='cp --reflink=auto'
 
