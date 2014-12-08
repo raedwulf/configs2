@@ -8,10 +8,12 @@
 #fi
 #rm $HOME/.antigen
 #ln -sf $HOME/.antigen2 $HOME/.antigen
+source $HOME/.zshenv
 source $HOME/config/antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
+unset GREP_OPTIONS
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
@@ -31,3 +33,5 @@ antigen apply
 
 # Profiling options
 #zprof
+
+unset GREP_OPTIONS

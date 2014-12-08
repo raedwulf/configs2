@@ -10,6 +10,9 @@ export PYTHONDOCS=/usr/share/doc/python2/html/
 
 alias cp='cp --reflink=auto'
 
+# Fix GREP_OPTIONS
+alias grep="/usr/bin/grep $GREP_OPTIONS"
+
 mkdir -p $TMPDIR
 mkdir -p $TMPDIR/vim
 #if [ ! -d $TMPDIR/antigen ]; then
