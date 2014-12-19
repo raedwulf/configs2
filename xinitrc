@@ -5,7 +5,7 @@ xset +fp /usr/share/fonts/local
 xset fp rehash
 xsetroot -cursor_name left_ptr
 
-exec enlightenment_start
+#exec enlightenment_start
 #exec startlxde
 
 export PANEL_FIFO=`mktemp --tmpdir bspwm-panel.XXX`
